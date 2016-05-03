@@ -5,12 +5,12 @@
 | ...      | ... |
 
 ### Week 1 Checklist
-- [ ] All: Complete AVC plan
-- [ ] Dylan: Assemble chassis
+- [x] All: Complete AVC plan
+- [x] Dylan + Shaun: Assemble chassis(only needs motors connected(choosing ports))
 - [ ] Shaun: implement gate opening
 - [ ] Rachel: code for straight line movement
 - [x] Ashton: sort out Github account and contributor status
-- [ ] Stella: make sure everyone has signed plan
+- [x] Stella: make sure everyone has signed plan
 
 ### Week 3 Checklist
 - [ ] All: write Background section
