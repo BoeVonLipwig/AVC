@@ -6,12 +6,12 @@
 
 extern "C" int InitHardware();
 extern "C" int Sleep(int sec, int usec);
-extern "C" int SetPWM(int chan, int value);
+extern "C" int set_motor(int motor , int speed );
 
 int main() {
     InitHardware();
-    SetPWM(7, 255);
+    set_motor(1,255);
     Sleep(5,0);
-    SetPWM(7,0);
+    set_motor(1,0);
     return 0;
 }
