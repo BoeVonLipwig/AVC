@@ -22,12 +22,12 @@
 
 | Week  | Team Objective(s)  | Items Due | Conflicting Committments | Tasks |
 | :------------ |:---------------:| ------: | ------: | ------: |
-| 1   | Robot moving | AVC Plan Due | PHYS122 test | [Week 1 Checklist](#week-1-checklist) | 
+| 1   | Robot moving | AVC Plan Due | PHYS122 test | [Week 0 Checklist](#week-1-checklist) |
 | 2   |  |  | | Mid Trimester Break|
-| 3   | Quadrant 1 complete |  | | [Week 3 Checklist](#week-3-checklist) |
-| 4   |                     |  | | [Week 4 Checklist](#week-4-checklist) |
-| 5   |                     |  | | [Week 5 Checklist](#week-5-checklist) |
-| 6   |                     |  | | [Week 6 Checklist](#week-6-checklist) |
-| 7   |                     |  | | [Week 7 Checklist](#week-7-checklist) |
-| 8   |                     |  | | [Week 8 Checklist](#week-8-checklist) |
+| 3   | Quadrant 1 complete |  | | [Week 3 Checklist](#week-1-checklist) |
+| 4   |                     |  | | [Week 4 Checklist](#week-2-checklist) |
+| 5   |                     |  | | [Week 5 Checklist](#week-3-checklist) |
+| 6   |                     |  | | [Week 6 Checklist](#week-4-checklist) |
+| 7   |                     |  | | [Week 7 Checklist](#week-5-checklist) |
+| 8   |                     |  | | [Week 8 Checklist](#week-6-checklist) |
 | 9   | Submit final reports | Final report due | Exams | |
