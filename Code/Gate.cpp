@@ -10,6 +10,8 @@ extern "C" int receive_from_server(char message[24]);
 
 int main() {
     init(1);
-    connect_to_server();
+    char pass[24];
+    connect_to_server("130.195.6.196", 22);
+    pass=receive_from_server();
     return 0;
 }
