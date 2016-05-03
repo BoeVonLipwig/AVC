@@ -4,7 +4,7 @@
 | :------------ |:---------------:| 
 | ...      | ... |
 
-### Week 1 Checklist
+### Week 0+1 Checklist
 - [x] All: Complete AVC plan
 - [x] Dylan + Shaun + Rachel: Assemble chassis(only needs motors connected(choosing ports))
 - [ ] Shaun: implement gate opening
@@ -12,7 +12,7 @@
 - [x] Ashton: sort out Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
 
-### Week 3 Checklist
+### Week 2 Checklist
 - [ ] All: write Background section
 - [ ] Dylan: chassis design
 - [ ] Shaun: reading data from camera
