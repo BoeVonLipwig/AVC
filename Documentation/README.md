@@ -26,8 +26,8 @@
 | -   |  |  | | Mid Trimester Break|
 | 1   | Quadrant 1 complete |  | | [Week 3 Checklist](#week-1-checklist) |
 | 2   |                     |  | | [Week 4 Checklist](#week-2-checklist) |
-| 3   |                     |  | | [Week 5 Checklist](#week-3-checklist) |
+| 3   |                     | Progress Report Due | | [Week 5 Checklist](#week-3-checklist) |
 | 4   |                     |  | | [Week 6 Checklist](#week-4-checklist) |
 | 5   |                     |  | | [Week 7 Checklist](#week-5-checklist) |
-| 6   |                     |  | | [Week 8 Checklist](#week-6-checklist) |
+| 6   |                     | AVC Hand-in | | [Week 8 Checklist](#week-6-checklist) |
 | 7   | Submit final reports | Final report due | Exams | |
