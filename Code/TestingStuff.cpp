@@ -7,6 +7,8 @@
 extern "C" int init();
 extern "C" int Sleep(int sec, int usec);
 extern "C" int set_motor(int motor , int speed );
+extern "C" int take_picture();
+extern "C" int save_picture(char filename[5]);
 
 int main() {
     init();
@@ -16,6 +18,8 @@ int main() {
     set_motor(1,0);
     set_motor(2,0);
     Sleep(2,0);
+    take_picture();
+    save_picture("test");
     return 0;
 }
 
