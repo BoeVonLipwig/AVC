@@ -1,2 +1,2 @@
-output:input.cpp
-    gcc -L/usr/lib -o input input.cpp -lE101
+ts:TestingStuff.cpp
+    gcc -L/usr/lib -o ts TestingStuff.cpp -lE101
