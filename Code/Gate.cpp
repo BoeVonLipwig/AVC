@@ -14,6 +14,6 @@ int main() {
     int pass;
     connect_to_server("130.195.6.196", 22);
     pass=receive_from_server("my-password");
-    send_to_server(itoa(pass));
+    send_to_server((char *) pass);
     return 0;
 }
