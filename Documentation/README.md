@@ -8,7 +8,7 @@
 - [x] All: Complete AVC plan
 - [x] Dylan + Shaun + Rachel: Assemble chassis
 - [ ] Shaun: implement gate opening
-- [ ] Rachel: code for straight line movement
+- [x] Rachel: code for straight line movement
 - [x] Ashton: sort out Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
 

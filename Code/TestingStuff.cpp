@@ -18,3 +18,14 @@ int main() {
     Sleep(2,0);
     return 0;
 }
+
+void turn(int dir) {
+    if(dir == 1) {
+        set_motor(1,128);
+        set_motor(2, 64);
+    }
+    else if(dir == 2) {
+        set_motor(1,64);
+        set_motor(2,128);
+    }
+}
