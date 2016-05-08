@@ -7,16 +7,16 @@
 ### Week 0+1 Checklist
 - [x] All: Complete AVC plan
 - [x] Dylan + Shaun + Rachel: Assemble chassis
-- [x] Shaun: implement gate opening
+- [x] Shaun + Rachel + Stella: implement gate opening
 - [x] Rachel: code for straight line movement
 - [x] Ashton: sort out Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
 
 ### Week 2 Checklist
 - [ ] All: write Background section
-- [ ] Dylan: chassis design
+- [ ] Dylan: chassis design-started
 - [ ] Shaun: reading data from camera
-- [ ] Rachel: implement turning
+- [ ] Rachel: implement turning-started
 - [ ] Ashton: update documentation
 - [ ] Stella: test code with chassis on maze
 
