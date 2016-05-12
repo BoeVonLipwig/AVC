@@ -12,8 +12,8 @@ extern "C" int receive_from_server(char message[24]);
 int main() {
     init(0);
     int pass;
-    char gateIp[] = "130.195.6.196";
-    char msg[] = "my-password";
+    char[] gateIp = "130.195.6.196";
+    char[] msg = "my-password";
     connect_to_server(gateIp, 22);
     pass = receive_from_server(msg);
     send_to_server((char *) pass);
