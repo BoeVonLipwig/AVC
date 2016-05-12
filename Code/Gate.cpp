@@ -16,6 +16,8 @@ int main() {
     char msg[] = "my-password";
     connect_to_server(gateIp, 22);
     pass = receive_from_server(msg);
-    send_to_server((char *) pass);
+    char password[24];
+    sprintf(password, "%d", pass);
+    send_to_server(password);
     return 0;
 }
