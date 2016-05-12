@@ -15,12 +15,12 @@
 ### Week 2 Checklist
 - [ ] All: write Background section
 - [ ] Dylan: chassis design-started
-- [ ] Shaun: reading data from camera
-- [ ] Rachel: implement turning-started
+- [ ] Rachel: reading data from camera
+- [ ] Shaun: implement turning-started
 - [ ] Ashton: update documentation
 - [ ] Stella: test code with chassis on maze
 
-| Week  | Team Objective(s)  | Items Due | Conflicting Committments | Tasks |
+| Week  | Team Objective(s)  | Items Due | Conflicting Commitments | Tasks |
 | :------------ |:---------------:| ------: | ------: | ------: |
 | 0   | Robot moving | AVC Plan Due | PHYS122 test | [Week 0 Checklist](#week-1-checklist) |
 | -   |  |  | | Mid Trimester Break|
