@@ -13,18 +13,17 @@ int main(void) {
         take_picture();
         float kp = 1;
         int error = 0;
-        int s =0;
+        int whiteBlack =0;
         for(int i = 0; i < 320; i++) {
-            int w = get_pixel(i, 120, 3);
-            if(w > 127) {
-                s=1;
+            if(get_pixel(i, 120, 3) > 127) {
+                whiteBlack=1;
             }else {
-                s=0;
+                whiteBlack=0;
             }
-            error += (i - 160)*s;
+            error += (i - 160)*whiteBlack;
             }
       	 float  proportional_signal = error * kp;
-        set_motor(1, (proportional_signal/(160*-1*kp))*255);
-        set_motor(2, (proportional_signal/(160*1*kp))*255);
+        set_motor(1, -(proportional_signal/(160*kp))*128);
+        set_motor(2, (proportional_signal/(160*kp))*128);
     }
 }
