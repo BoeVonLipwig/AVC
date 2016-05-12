@@ -7,20 +7,20 @@
 ### Week 0+1 Checklist
 - [x] All: Complete AVC plan
 - [x] Dylan + Shaun + Rachel: Assemble chassis
-- [x] Shaun: implement gate opening
+- [x] Shaun + Rachel + Stella: implement gate opening
 - [x] Rachel: code for straight line movement
 - [x] Ashton: sort out Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
 
 ### Week 2 Checklist
 - [ ] All: write Background section
-- [ ] Dylan: chassis design
-- [ ] Shaun: reading data from camera
-- [ ] Rachel: implement turning
+- [ ] Dylan: chassis design-started
+- [ ] Rachel: reading data from camera
+- [ ] Shaun: implement turning-started
 - [ ] Ashton: update documentation
 - [ ] Stella: test code with chassis on maze
 
-| Week  | Team Objective(s)  | Items Due | Conflicting Committments | Tasks |
+| Week  | Team Objective(s)  | Items Due | Conflicting Commitments | Tasks |
 | :------------ |:---------------:| ------: | ------: | ------: |
 | 0   | Robot moving | AVC Plan Due | PHYS122 test | [Week 0 Checklist](#week-1-checklist) |
 | -   |  |  | | Mid Trimester Break|
