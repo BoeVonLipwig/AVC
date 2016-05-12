@@ -24,7 +24,7 @@ int main(void) {
             error += (i - 160)*s;
             }
       	 float  proportional_signal = error * kp;
-        set_motor(1, (proportional_signal/(160*-1*kp))*128);
-        set_motor(2, (proportional_signal/(160*1*kp))*128);
+        set_motor(1, (proportional_signal/(160*-1*kp))*255);
+        set_motor(2, (proportional_signal/(160*1*kp))*255);
     }
 }
