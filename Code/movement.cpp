@@ -11,7 +11,7 @@ int main(void) {
     init(0);
     while(true) {
         take_picture();
-        float kp = 0.5;
+        float kp = 1;
         int error = 0;
         int s =0;
         for(int i = 0; i < 320; i++) {
