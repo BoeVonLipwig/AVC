@@ -9,6 +9,8 @@ extern "C" int Sleep(int sec, int usec);
 
 int main() {
     init(0);
+    int total_error = 0;
+    int previous_error = 0;
     while(true) {
         take_picture();
         float kp = 0.5; //proportional constant (might need to be changed later based on testing)
@@ -20,9 +22,7 @@ int main() {
         int derivative_signal = 0;
         
         int current_error = 0;
-        int total_error = 0;
-        int previous_error = 0;
-        int error_period = 0; //try to get a default number by testing
+        int error_period = 1; //try to get a default number by testing (currently set to 1 to avoid dividing by 0)
         int error_diff = 0;
         int whiteBlack = 0;
         
