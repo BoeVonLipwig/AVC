@@ -7,23 +7,45 @@ extern "C" int set_motor(int motor, int speed);
 extern "C" char get_pixel(int row, int col, int colour);
 extern "C" int Sleep(int sec, int usec);
 
-int main(void) {
+int main() {
     init(0);
     while(true) {
         take_picture();
-        float kp = 1;
-        int error = 0;
-        int whiteBlack =0;
+        float kp = 0.5; //proportional constant (might need to be changed later based on testing)
+        float ki = 0.5; //integral constant
+        float kd = 0.5; //derivatve constant
+        
+        int proportional_signal = 0;
+        int integral_signal = 0;
+        int derivative_signal = 0;
+        
+        int current_error = 0;
+        int total_error = 0;
+        int previous_error = 0;
+        int error_period = 0; //try to get a default number by testing
+        int error_diff = 0;
+        int whiteBlack = 0;
+        
         for(int i = 0; i < 320; i++) {
-            if(get_pixel(i, 120, 3) > 127) {
-                whiteBlack=1;
+            if(get_pixel(i, 120, 3) > 127) { //to compare the brightness
+                whiteBlack = 1; //white
             }else {
-                whiteBlack=0;
+                whiteBlack = 0; //black
             }
-            error += (i - 160)*whiteBlack;
+            current_error += (i - 160)*whiteBlack; //help determine scale of adjustment
             }
-      	 float  proportional_signal = error * kp;
-        set_motor(1, 64 -proportional_signal);
-        set_motor(2, 64 + proportional_signal);
+            
+        total_error += current_error; //the sum of all errors
+        
+      	proportional_signal = current_error * kp;
+      	integral_signal = total_error * ki;
+      	
+      	error_diff = current_error - pervious_error;
+      	derivative_signal = (error_diff/error_period) * kd;
+      	
+      	pervious_error = current_error;
+      	
+        set_motor(1, 64 - proportional_signal+integral_signal+derivative_signal); //might need smaller speed to help testing
+        set_motor(2, 64 + proportional_signal+integral_signal+derivative_signal);
     }
 }
