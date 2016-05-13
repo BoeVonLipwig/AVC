@@ -12,13 +12,32 @@
 - [x] Ashton: sort out Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
 
-### Week 2 Checklist
+### Week 2+3 Checklist
 - [ ] All: write Background section
-- [ ] Dylan: chassis design-started
-- [ ] Rachel: reading data from camera
-- [ ] Shaun: implement turning-started
+- [x] Dylan: chassis design-started
+- [x] Rachel: reading data from camera
+- [x] Shaun: implement turning-started
 - [ ] Ashton: update documentation
-- [ ] Stella: test code with chassis on maze
+- [x] Stella: test code with chassis on maze
+
+### Week 4 Checklist
+- [ ] All: Write Methods section
+
+### Week 5 Checklist
+- [ ] All: Write Results and Discussion sections
+
+### Week 6 Checklist
+- [ ] All: Update sections with new results
+
+### Week 7 Checklist
+- [ ] All: Update sections with new results, revise sections based on feedback
+
+### Week 8 Checklist
+- [ ] All: Write Conclusion and abstract section
+
+### Week 9 Checklist
+- [ ] All: Finish report if not done
+
 
 | Week  | Team Objective(s)  | Items Due | Conflicting Commitments | Tasks |
 | :------------ |:---------------:| ------: | ------: | ------: |
