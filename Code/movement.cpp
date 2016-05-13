@@ -29,23 +29,24 @@ int main() {
         for(int i = 0; i < 320; i++) {
             if(get_pixel(i, 120, 3) > 127) { //to compare the brightness
                 whiteBlack = 1; //white
-            }else {
+            }
+            else {
                 whiteBlack = 0; //black
             }
-            current_error += (i - 160)*whiteBlack; //help determine scale of adjustment
-            }
+            current_error += (i - 160) * whiteBlack; //help determine scale of adjustment
+        }
             
         total_error += current_error; //the sum of all errors
         
       	proportional_signal = current_error * kp;
       	integral_signal = total_error * ki;
       	
-      	error_diff = current_error - pervious_error;
+      	error_diff = current_error - previous_error;
       	derivative_signal = (error_diff/error_period) * kd;
       	
-      	pervious_error = current_error;
+      	previous_error = current_error;
       	
-        set_motor(1, 64 - proportional_signal+integral_signal+derivative_signal); //might need smaller speed to help testing
-        set_motor(2, 64 + proportional_signal+integral_signal+derivative_signal);
+        set_motor(1, 64 - proportional_signal + integral_signal + derivative_signal); //might need smaller speed to help testing
+        set_motor(2, 64 + proportional_signal + integral_signal + derivative_signal);
     }
 }
