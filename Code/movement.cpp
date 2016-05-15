@@ -25,17 +25,18 @@ int main() {
         int error_period = 1; //try to get a default number by testing (currently set to 1 to avoid dividing by 0)
         int error_diff = 0;
         int whiteBlack = 0;
-        
+        //int count =0;
         for(int i = 0; i < 320; i++) {
             if(get_pixel(i, 120, 3) > 127) { //to compare the brightness
                 whiteBlack = 1; //white
+                //count++;
             }
             else {
                 whiteBlack = 0; //black
             }
             current_error += (i - 160) * whiteBlack; //help determine scale of adjustment
         }
-            
+        //current_error/count;
         total_error += current_error; //the sum of all errors
         
       	proportional_signal = current_error * kp;
