@@ -15,6 +15,7 @@
 ### Week 2+3 Checklist
 - [ ] All: write Background section
 - [x] Dylan: chassis design-started
+- [ ] Dylan: camera mount
 - [x] Rachel: reading data from camera
 - [x] Shaun: implement turning-started
 - [ ] Ashton: update documentation
