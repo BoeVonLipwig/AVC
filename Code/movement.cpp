@@ -36,8 +36,8 @@ int main() {
             }
             current_error += (i - 160) * whiteBlack; //help determine scale of adjustment
         }
-	if(count > 0)
-        	current_error /= count;
+	if(count > 0) 
+        	current_error /= count; 
         total_error += current_error; //the sum of all errors
         
       	proportional_signal = current_error * kp;
@@ -47,8 +47,14 @@ int main() {
       	derivative_signal = (error_diff/error_period) * kd;
       	
       	previous_error = current_error;
-      	printf("proportional signal: %d\n", proportional_signal);
-        //set_motor(1, 32 + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
-        //set_motor(2, 32 - (proportional_signal + integral_signal + derivative_signal));
+      	//printf("proportional signal: %d\n", proportional_signal);
+      	if(count > 0) {
+        	set_motor(1, 32 + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
+        	set_motor(2, 32 - (proportional_signal + integral_signal + derivative_signal)); 
+        }
+        else {
+        	set_motor(1, -32);
+        	set_motor(2, -32); //temporary measure for going off the line
+        }
     }
 }
