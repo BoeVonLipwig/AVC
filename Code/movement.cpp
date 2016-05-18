@@ -16,16 +16,16 @@ int main() {
         float kp = 0.5; //proportional constant (might need to be changed later based on testing)
         float ki = 0; //integral constant
         float kd = 0; //derivatve constant
-        
-        int proportional_signal = 0;
-        int integral_signal = 0;
-        int derivative_signal = 0;
-        
+
+        float  proportional_signal = 0;
+        float integral_signal = 0;
+        float derivative_signal = 0;
+
         int current_error = 0;
-        int error_period = 1; //try to get a default number by testing (currently set to 1 to avoid dividing by 0)
+        float error_period = 0.1; //try to get a default number by testing (currently set to 1 to avoid dividing by 0)
         int error_diff = 0;
         int whiteBlack = 0;
-        int count =0;
+        int count = 0;
         for(int i = 0; i < 320; i++) {
             if(get_pixel(i, 120, 3) > 127) { //to compare the brightness
                 whiteBlack = 1; //white
@@ -37,24 +37,19 @@ int main() {
             current_error += (i - 160) * whiteBlack; //help determine scale of adjustment
         }
 	if(count > 0) 
-        	current_error /= count; 
+        	current_error /= count;
+
         total_error += current_error; //the sum of all errors
-        
+
       	proportional_signal = current_error * kp;
       	integral_signal = total_error * ki;
-      	
+
       	error_diff = current_error - previous_error;
       	derivative_signal = (error_diff/error_period) * kd;
-      	
+
       	previous_error = current_error;
-      	//printf("proportional signal: %d\n", proportional_signal);
-      	if(count > 0) {
-        	set_motor(1, 32 + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
-        	set_motor(2, 32 - (proportional_signal + integral_signal + derivative_signal)); 
-        }
-        else {
-        	set_motor(1, -32);
-        	set_motor(2, -32); //temporary measure for going off the line
-        }
+      	printf("proportional signal: %d\n", proportional_signal);
+	set_motor(1, 32 + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
+	set_motor(2, 32 - (proportional_signal + integral_signal + derivative_signal)); 
     }
 }
