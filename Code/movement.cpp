@@ -26,18 +26,18 @@ int main() {
         int error_diff = 0;
         int whiteBlack = 0;
         int count =0;
-        for(int i = 0; i < 320; i++) {
-            if(get_pixel(i, 120, 3) > 127) { //to compare the brightness
+        for(int i = 0; i < 32; i++) { //check every 10 pixels to improve response time
+            if(get_pixel(i * 10, 120, 3) > 127) { //to compare the brightness
                 whiteBlack = 1; //white
                 count++;
             }
             else {
                 whiteBlack = 0; //black
             }
-            current_error += (i - 160) * whiteBlack; //help determine scale of adjustment
+            current_error += (i - 16) * whiteBlack; //help determine scale of adjustment
         }
-	if(count > 0) 
-        	current_error /= count; 
+	//if(count > 0)
+        	//current_error /= count;
         total_error += current_error; //the sum of all errors
         
       	proportional_signal = current_error * kp;
