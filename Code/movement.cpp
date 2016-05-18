@@ -11,9 +11,10 @@ int main() {
     init(0);
     int total_error = 0;
     int previous_error = 0;
+	int base_speed = 40;
     while(true) {
         take_picture();
-        float kp = 0.5; //proportional constant (might need to be changed later based on testing)
+        float kp = -0.1; //proportional constant (might need to be changed later based on testing)
         float ki = 0; //integral constant
         float kd = 0; //derivatve constant
 
@@ -37,9 +38,8 @@ int main() {
             }
             current_error += (i - 16) * whiteBlack; //help determine scale of adjustment
         }
-	//if(count > 0)
-        	//current_error /= count;
-        total_error += current_error; //the sum of all errors
+
+	total_error += current_error; //the sum of all errors
 
       	proportional_signal = current_error * kp;
       	integral_signal = total_error * ki;
@@ -48,8 +48,8 @@ int main() {
       	derivative_signal = (error_diff/error_period) * kd;
 
       	previous_error = current_error;
-      	printf("proportional signal: %d\n", proportional_signal);
-	set_motor(1, 32 + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
-	set_motor(2, 32 - (proportional_signal + integral_signal + derivative_signal)); 
+//      	printf("proportional signal: %d\n", proportional_signal);
+		set_motor(1, base_speed + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
+		set_motor(2, base_speed - (proportional_signal + integral_signal + derivative_signal)); 
     }
 }
