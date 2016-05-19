@@ -26,6 +26,7 @@ int main(void) {
     int base_speed = 40;
     int total_error = 0;
     int previous_error = 0;
+    bool first = true;
     while(true) {
         take_picture();
         float kp = -0.1; //proportional constant (might need to be changed later based on testing)
@@ -58,6 +59,10 @@ int main(void) {
         proportional_signal = current_error * kp;
         integral_signal = total_error * ki;
 
+        if(first) {
+            previous_error = current_error;
+            first = false;
+        }
         error_diff = current_error - previous_error;
         derivative_signal = (error_diff/error_period) * kd;
 
