@@ -10,14 +10,11 @@ extern "C" int receive_from_server(char message[24]);
 
 
 int main() {
-    init(0);
-    int pass;
-    char gateIp[15] = "130.195.6.196";
-    char msg[24] = "my-password";
-    connect_to_server(gateIp, 22);
-    pass = receive_from_server(msg);
-    char password[24];
-    sprintf(password, "%d", pass);
-    send_to_server(password);
-    return 0;
+    	init(0);
+	char pass[24];
+	connect_to_server("130.195.6.196", 1024);
+	send_to_server("Please");
+	receive_from_server(pass);
+    	send_to_server(pass);
+    	return 0;
 }
