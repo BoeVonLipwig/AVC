@@ -17,27 +17,20 @@ extern "C" int Sleep(int sec, int usec);
 
 int main(void) {
     init(0);
-
-    int base_speed = 40;
-
-    set_motor(1, base_speed);
-    set_motor(2, base_speed);
-    //Sleep(2,0);
-
     char pass[24];
     connect_to_server("130.195.6.196", 1024);
     send_to_server("Please");
     receive_from_server(pass);
     send_to_server(pass);
 
-
+    int base_speed = 40;
     int total_error = 0;
     int previous_error = 0;
     while(true) {
         take_picture();
         float kp = -0.1; //proportional constant (might need to be changed later based on testing)
         float ki = 0; //integral constant
-        float kd = 0; //derivative constant
+        float kd = -5.0; //derivative constant
 
         float  proportional_signal = 0;
         float integral_signal = 0;
