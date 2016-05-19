@@ -15,18 +15,6 @@ extern "C" char get_pixel(int row, int col, int colour);
 extern "C" int Sleep(int sec, int usec);
 
 
-void openGate() {
-    int pass;
-    char gateIp[15] = "130.195.6.196";
-    char msg[24] = "my-password";
-    connect_to_server(gateIp, 22);
-    pass = receive_from_server(msg);
-    char password[24];
-    sprintf(password, "%d", pass);
-    send_to_server(password);
-    return;
-}
-
 int main(void) {
     init(0);
 
@@ -36,14 +24,11 @@ int main(void) {
     set_motor(2, base_speed);
     //Sleep(2,0);
 
-    int pass;
-    char gateIp[15] = "130.195.6.196";
-    char msg[24] = "my-password";
-    connect_to_server(gateIp, 22);
-    pass = receive_from_server(msg);
-    char password[24];
-    sprintf(password, "%d", pass);
-    send_to_server(password);
+    char pass[24];
+    connect_to_server("130.195.6.196", 1024);
+    send_to_server("Please");
+    receive_from_server(pass);
+    send_to_server(pass);
 
 
     int total_error = 0;
