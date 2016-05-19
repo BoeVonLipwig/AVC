@@ -34,7 +34,7 @@ int main(void) {
 
     set_motor(1, base_speed);
     set_motor(2, base_speed);
-    //Sleep(2,0);
+    ///Sleep(2,0);
 
     int pass;
     char gateIp[15] = "130.195.6.196";
