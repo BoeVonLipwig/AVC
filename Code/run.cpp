@@ -34,9 +34,17 @@ int main(void) {
 
     set_motor(1, base_speed);
     set_motor(2, base_speed);
-    Sleep(2,0);
+    //Sleep(2,0);
 
-    openGate();
+    int pass;
+    char gateIp[15] = "130.195.6.196";
+    char msg[24] = "my-password";
+    connect_to_server(gateIp, 22);
+    pass = receive_from_server(msg);
+    char password[24];
+    sprintf(password, "%d", pass);
+    send_to_server(password);
+
 
     int total_error = 0;
     int previous_error = 0;
