@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <signal.h>
 
 extern "C" int init(int d_lev);
 extern "C" int connect_to_server(char server_addr[15], int port);
@@ -14,8 +15,15 @@ extern "C" int set_motor(int motor, int speed);
 extern "C" char get_pixel(int row, int col, int colour);
 extern "C" int Sleep(int sec, int usec);
 
+void terminate(void) {
+    set_motor(1,0);
+    set_motor(2,0);
+    exit(0);
+}
 
 int main(void) {
+    signal(SIGINT, terminate); //trying to catch CTRL + C to ensure problem stops properly
+
     init(0);
     char pass[24];
     connect_to_server("130.195.6.196", 1024);
@@ -27,6 +35,7 @@ int main(void) {
     int total_error = 0;
     int previous_error = 0;
     bool first = true;
+    time_t sec = time(NULL);
     while(true) {
         take_picture();
         float kp = -0.1; //proportional constant (might need to be changed later based on testing)
@@ -76,6 +85,8 @@ int main(void) {
             set_motor(1, -base_speed); //backup when line is lost
             set_motor(2, -base_speed);
         }
+        error_period = TIME(NULL) - sec; //check actual time delay
+        printf("%d\n", error_period);
     }
 
 }
