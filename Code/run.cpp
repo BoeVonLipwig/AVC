@@ -30,7 +30,7 @@ int main(void) {
         take_picture();
         float kp = -0.1; //proportional constant (might need to be changed later based on testing)
         float ki = 0; //integral constant
-        float kd = -5.0; //derivative constant
+        float kd = 1.0; //derivative constant
 
         float  proportional_signal = 0;
         float integral_signal = 0;
