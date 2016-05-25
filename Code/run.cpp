@@ -72,10 +72,9 @@ int main(void) {
             previous_error = current_error;
             first = false;
         }
-        error_diff = current_error - previous_error;
-        derivative_signal = (error_diff/error_period) * kd;
+        //error_diff = current_error - previous_error;
+        //derivative_signal = (error_diff/error_period) * kd;
 
-        previous_error = current_error;
         //printf("derivative signal: %d\n", derivative_signal)
         if(count > 0) {
             set_motor(1, base_speed + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
@@ -84,9 +83,18 @@ int main(void) {
         else {
             set_motor(1, -base_speed); //backup when line is lost
             set_motor(2, -base_speed);
+            if(previous_error > 0) { //make a sharp turn if line is lost
+                set_motor(1, 50);
+                set_motor(2, 0);
+            }
+            else {
+                set_motor(1, 0);
+                set_motor(2, 50);
+            }
         }
-        error_period = TIME(NULL) - sec; //check actual time delay
-        printf("%d\n", error_period);
+        previous_error = current_error;
+        //error_period = TIME(NULL) - sec; //check actual time delay
+        //printf("%d\n", error_period);
     }
 
 }
