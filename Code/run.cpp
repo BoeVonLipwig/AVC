@@ -33,7 +33,7 @@ int main(void) {
     int base_speed = 40;
     int total_error = 0;
     int previous_error = 0;
-    int last_non_zero_error;
+    int last_non_zero_error = 0;
     bool first = true;
     time_t sec = time(NULL);
     while(true) {
@@ -64,9 +64,10 @@ int main(void) {
         }
 
         total_error += current_error; //the sum of all errors
-	
-	if(current_error != 0 && count > 10) {
+
+	if(count >= 15) {
 		last_non_zero_error = current_error;
+		//printf("%d\n", count);
 	}
         proportional_signal = current_error * kp;
         integral_signal = total_error * ki;
@@ -91,7 +92,7 @@ int main(void) {
                 set_motor(1, 50);
                 set_motor(2, -50);
             }
-            else {
+            else if(last_non_zero_error > 0) {
                 set_motor(1, -50);
                 set_motor(2, 50);
             }
