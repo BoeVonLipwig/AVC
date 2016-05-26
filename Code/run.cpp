@@ -15,14 +15,14 @@ extern "C" int set_motor(int motor, int speed);
 extern "C" char get_pixel(int row, int col, int colour);
 extern "C" int Sleep(int sec, int usec);
 
-void terminate(void) {
+/*void terminate(void) {
     set_motor(1,0);
     set_motor(2,0);
     exit(0);
-}
+}*/
 
 int main(void) {
-    signal(SIGINT, terminate); //trying to catch CTRL + C to ensure problem stops properly
+   // signal(SIGINT, terminate); //trying to catch CTRL + C to ensure problem stops properly
 
     init(0);
     char pass[24];
@@ -34,6 +34,7 @@ int main(void) {
     int base_speed = 40;
     int total_error = 0;
     int previous_error = 0;
+    int last_non_zero_error;
     bool first = true;
     time_t sec = time(NULL);
     while(true) {
@@ -64,7 +65,10 @@ int main(void) {
         }
 
         total_error += current_error; //the sum of all errors
-
+	
+	if(current_error != 0 && count > 10) {
+		last_non_zero_error = current_error;
+	}
         proportional_signal = current_error * kp;
         integral_signal = total_error * ki;
 
@@ -77,23 +81,23 @@ int main(void) {
 
         //printf("derivative signal: %d\n", derivative_signal)
         if(count > 0) {
+	    previous_error = current_error;
             set_motor(1, base_speed + (proportional_signal + integral_signal + derivative_signal)); //might need smaller speed to help testing
             set_motor(2, base_speed - (proportional_signal + integral_signal + derivative_signal));
         }
         else {
             set_motor(1, -base_speed); //backup when line is lost
             set_motor(2, -base_speed);
-            if(previous_error > 0) { //make a sharp turn if line is lost
+            if(last_non_zero_error < 0) { //make a sharp turn if line is lost
                 set_motor(1, 50);
-                set_motor(2, 0);
+                set_motor(2, -50);
             }
             else {
-                set_motor(1, 0);
+                set_motor(1, -50);
                 set_motor(2, 50);
             }
         }
-        previous_error = current_error;
-        //error_period = TIME(NULL) - sec; //check actual time delay
+       	//error_period = TIME(NULL) - sec; //check actual time delay
         //printf("%d\n", error_period);
     }
 
