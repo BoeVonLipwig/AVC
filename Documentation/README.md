@@ -3,41 +3,57 @@
 | Parts  | Cost (Arthur$)  |
 | :------------ |:---------------:| 
 | ...      | ... |
-
+Name = Major
+(Name) = Minor
 ### Week 0+1 Checklist
 - [x] All: Complete AVC plan
-- [x] Dylan + Shaun + Rachel: Assemble chassis
-- [x] Shaun + Rachel + Stella: implement gate opening
+- [x] Dylan: Assemble chassis
+- [x] Shaun: implement gate opening
 - [x] Rachel: code for straight line movement
-- [x] Ashton: sort out Github account and contributor status
+- [x] Ashton: sort out personal Github account and contributor status
 - [x] Stella: make sure everyone has signed plan
+
+### Week 0+1 Completed tasks:
+- [x] All: Complete AVC plan
+- [x] Shaun (Rachel+Dylan): Dylan had to leave earlie due to work chassis was finished by Shaun with some help from Rachel
+- [x] Shaun + Rachel + Stella: Gate code written in 2-3 form but couldn't get it working.(Rachel says she will fix later)
+- [x] Rachel(Stella + Shaun): Wrote some code but we where unable to get the code via git to the bot so pushed back to next week.
+- [x] Ashton: Done
+- [x] Stella: Done
 
 ### Week 2+3 Checklist
 - [ ] All: write Background section
 - [x] Dylan: chassis design-started
 - [ ] Dylan: camera mount
-- [x] Rachel: reading data from camera
-- [x] Shaun: implement turning-started
+- [x] Rachel: code for straight line movement
+- [x] Shaun: Finish gate code
 - [ ] Ashton: update documentation
-- [x] Stella: test code with chassis on maze
+- [ ] Stella: test code with chassis on maze
+
+### Week 2+3 Completed tasks:
+- [ ] All: write Background section
+- [x] Dylan: Did some research for chassis design ideas.
+- [ ] Dylan: Had trouble with getting Freecad software to work so did Shaun and Ashton so could not craft a cam holder.
+- [x] Rachel + Shaun: Rachel mannaged to get git working on robot.
+- [x] Rachel (Shaun): Shaun was unable to get gate code working properly due to some problem with dependency's
+                      (a few where from misspellings) and rachel took over while he fixed some hardware issues.
+- [ ] Ashton: update documentation
+- [ ] Stella: test code with chassis on maze(was unable to do so due to robot not having steering code yet so helped with code writing)
 
 ### Week 4 Checklist
-- [ ] All: Write Methods section
+- [x] Rachel: reading data from camera(Pushed back due to lack of moment when was planed to be implemented)
+- [x] Shaun: implement turning
+- [ ] Dylan: continue work on chassis
 
 ### Week 5 Checklist
-- [ ] All: Write Results and Discussion sections
 
 ### Week 6 Checklist
-- [ ] All: Update sections with new results
 
 ### Week 7 Checklist
-- [ ] All: Update sections with new results, revise sections based on feedback
 
 ### Week 8 Checklist
-- [ ] All: Write Conclusion and abstract section
 
 ### Week 9 Checklist
-- [ ] All: Finish report if not done
 
 
 | Week  | Team Objective(s)  | Items Due | Conflicting Commitments | Tasks |
